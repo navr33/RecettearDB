@@ -39,7 +39,7 @@ def get_location(db: Session = Depends(get_db)):
     """
     Endpoint to obtain all location types.
     """
-    return list(map(lambda x: {"location": x.name}, db.query(Location).all()))
+    return list(map(lambda x: {"name": x.name}, db.query(Location).all()))
 
 
 @app.get("/items")
